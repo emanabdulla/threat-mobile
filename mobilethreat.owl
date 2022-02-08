@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.russet.org.uk/tawny/mobilethreat/mthreat"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.russet.org.uk/tawny/mobilethreat/mthreat">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="mThreat" IRI="http://www.russet.org.uk/tawny/mobilethreat/mthreat#"/>
+    <Import>http://www.purl.org/ontolink/tawny</Import>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mThreat</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#GPS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Payment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupplyChain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#threatCategories"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EMM"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCategory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cellular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LAN&amp;PAN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#threat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Authentication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Privacy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ecosystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalAccess"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Application"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Authentication"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cellular"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EMM"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ecosystem"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPS"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Payment"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalAccess"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Privacy"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stack"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SupplyChain"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LAN&amp;PAN"/>
+        <Class IRI="#threatCategories"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Application"/>
+        <Class IRI="#Authentication"/>
+        <Class IRI="#Cellular"/>
+        <Class IRI="#EMM"/>
+        <Class IRI="#Ecosystem"/>
+        <Class IRI="#GPS"/>
+        <Class IRI="#Payment"/>
+        <Class IRI="#PhysicalAccess"/>
+        <Class IRI="#Privacy"/>
+        <Class IRI="#Stack"/>
+        <Class IRI="#SupplyChain"/>
+        <Class IRI="#LAN&amp;PAN"/>
+    </DisjointClasses>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCategory"/>
+        <Class IRI="#threat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCategory"/>
+        <Class IRI="#threatCategories"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Application</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Application</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Application</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to software applications developed for mobile devices</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Authentication</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Authentication</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Authentication</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to authentication mechanisms.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Cellular</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cellular</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cellular</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to cellular systems and infrastructure.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#EMM</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EMM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EMM</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to enterprise mobility management systems.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Ecosystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ecosystem</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ecosystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to the greater mobile ecosystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#GPS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GPS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GPS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to GPS technology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Payment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Payment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Payment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to mobile payments.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#PhysicalAccess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PhysicalAccess</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalAccess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats originating from outside of the device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Privacy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Privacy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Privacy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to user privacy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Stack</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Stack</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stack</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to the hardware, firmware, and software used to host and operate a device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#SupplyChain</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SupplyChain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SupplyChain</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to the device and component supply chain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#hasCategory</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hasCategory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#threat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">threat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#threat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The threat is a potential negative action or event facilitated by a vulnerability that results in an unwanted impact on a computer system, application and mobile devices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#threatCategories</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">threatCategories</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#LAN&amp;PAN</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LAN&amp;PAN</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LAN&amp;PAN</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threats related to local and personal area networks.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
