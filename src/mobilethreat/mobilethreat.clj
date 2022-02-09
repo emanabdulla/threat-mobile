@@ -19,6 +19,7 @@
 
 (defclass threatCategories)
 (defoproperty hasCategory
+ ;; :characteristic :transitive
   :domain threat
   :range threatCategories)
 
@@ -50,30 +51,38 @@
    :comment "Threats related to the device and component supply chain."))
 
 (as-disjoint-subclasses
-  Application
-  (defclass VulnerableApplications
-    :comment "This subcategory contains threats relating to discrete software vulnerabilities residing within mobile applications running atop the mobile operating system.")
+ Application
+ (defclass VulnerableApplications
+   :comment "This subcategory contains threats relating to discrete software vulnerabilities residing within mobile applications running atop the mobile operating system.")
 
-  (defclass MaliciousOrprivacy-invasiveApplication
-    :comment "This subcategory identifies mobile malware based threats, based in part off of Google's mobile classification taxonomy."))
+ (defclass MaliciousOrprivacy-invasiveApplication
+   :comment "This subcategory identifies mobile malware based threats, based in part off of Google's mobile classification taxonomy."))
+
+(defclass Actor
+  :comment " is a participant (person or group) in an action or  perform the possible countermeasures")
+
+(as-disjoint-subclasses
+ Actor
+ (defclass MobileDeviceUser)
+ (defclass MobileAppDeveloper)
+ (defclass Enterprise))
 
 
 ;;(defdproperty hasID :domain threatCategories :range string)
- 
-
 
 ;;; annotation properties
 (defaproperty hasID)
 (defaproperty Description)
 
+;;Application's Threat list
 (defclass EavesdroppingOnUnencrytedAppTraffic 
   :super VulnerableApplications
   :annotation
   (annotation hasID "APP-0")
-    ;(has-value hasID "APP-0")
+                                        ;(has-value hasID "APP-0")
   (annotation Description "Transmission of app or device data unencrypted allows any attacker with access to the physical media channel (e.g. proximity to wireless radios) to intercept that data. Even if the data is not directly sensitive, it may in combination with other data, allow an attacker in infer sensitive information or conduct other attacks against the user or device (e.g. geo-physical tracking, social engineering, phishing, watering-hole attacks)")
-;(owl-comment "description: Transmission of.......")
-)
+                             ;(owl-comment "description: Transmission of.......")
+  )
 
 (defclass ManInTheMiddleAttackOnServerAuthentication 
   :super VulnerableApplications
