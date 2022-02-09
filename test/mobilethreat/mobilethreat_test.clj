@@ -9,5 +9,5 @@
 (use-fixtures :each (f/reasoner :hermit))
 
 (deftest reasonable
-  (is (r/consistent? mobilethreat.mobilethreat/mobilethreat))
-  (is (r/coherent? mobilethreat.mobilethreat/mobilethreat)))
+  (is (r/consistent? ont/mThreat))
+  (is (r/coherent? ont/mThreat)))
