@@ -184,6 +184,101 @@
   (Description "Applications often have a need to dynamically incorporate input into sensitive operations such as access control decisions (e.g. authentication) or database operations. However, if a sensitive operation acts on untrusted and unsafe input, it may not function as intended. An attacker with control over such input can potentialy craft it to control application or system behavior. Prime examples of exploits include buffer overflow and code injection attacks. Therefore, it is important to evaluate untrusted input for safeness in the context in which it will be processed prior to accepting it.")
 (CVEExamples "CVE-2017-7005"))
 
+(defclass MaliciousDeviceInformationGathering
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-12")  
+  (Description "Persistent information that can be used to identify or characterize a specific mobile device in one or more contexts, such as IMEI, IMSI, MAC address, phone number, mobile OS, or installed apps, may be collected by a malicious or privacy-invasive app to facilitate future attacks. These values, particularly in combination, greatly increase potential for geo-physical or behavioral tracking, device fingerprinting, and impersonation attacks against the device or its user.")
+(CVEExamples " Not Applicable"))
+
+(defclass SensitiveInformationDiscoveryViaOSAPIs
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-13")  
+  (Description "Apps may be granted permission, by the user or by default, access common data stores provided by the mobile OS. Common stores are contacts lists, call history, calendar, notes, or app clipboard. When apps used in differing personal and enterprise contexts have access to these stores, they may contain co-mingled personal and enterprise data. A malicious or invasive app granted access to these locations can collect any sensitive data stored there, likely with an intent to exfiltrate it to the attacker.")
+(CVEExamples " Not Applicable"))
+
+(defclass MasqueradeAsLegitimateApplication
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-14")  
+  (Description "Like well-behaved apps, a trojan app offers some functionality to the user, though a trojan also includes hidden functionality that is malicious or otherwise undesirable. One technique for deploying trojan functionality is to obtain the install packages for a legitimate app, decompile/disassemble it, introduce the trojan, and then generate a new install package. The app will appear to a user to be the legitimate app. Distribution of trojans is commonly achieved by submission to open 3rd party app stores or social engineering attacks claiming to offer users the app with incentives (lower cost, free, extras unlocked, etc.)")
+(CVEExamples " Not Applicable"))
+
+;;(defclass Distribution of malicious apps by a 3rd party store
+ ;;:super MaliciousOrprivacy-invasiveApplication
+  ;; :annotation
+  ;;(annotation hasID "APP-15")  
+
+(defclass PremiumSMSFraud
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-16")  
+  (Description "SMS messages were initially charged to a cellular subscriber’s account on a per-message basis. However, some services use SMS messaging as a subscription or one-time payment method. The charge associated with the SMS message is placed on the cellular subscriber’s account and collected along with standard cellular service fees. This model enables malicious app developers to potentially collude with premium SMS service providers to commit fraud against users. The subscriber is held responsible for the fraudulent charges by the cellular carrier. Early forms of this attack exploited the weak OS permission models that allowed apps to send premium SMS messages without user interaction, which prompted improvement by affected OS developers. Contemporary variants must instead exploit vulnerabilities in the mobile OS to send messages without user knowledge and consent.")
+(CVEExamples " Not Applicable"))
+
+(defclass InterceptingSMSMessages
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-17")  
+  (Description "Prior to Android 4.4, apps granted permissions to SMS messaging functionality had the ability to listen for and receive incoming SMS messages. If the app was registered as the highest priority listener for messages, it could silently (without notice to the user) intercept, read, and dispose of messages intended for other apps. One serious abuse of this was the interception of one-time passwords (OTP) used for two-factor authentication (2FA) sent over SMS. Newer versions of Android do not permit apps with permission to access SMS messaging to receive or dispose of SMS messages directly. Unlike Android, the iOS security model does not permit apps with access to SMS messaging. Malicious apps may still realize this threat following exploitation of OS vulnerabilities that bypass access control on private SMS messaging APIs or achieve arbitrary code execution.")
+(CVEExamples " Not Applicable"))
+
+;;(defclass Premium Service Fraud
+ ;; (annotation hasID "APP-18")  
+
+(defclass AudioOrVideoSurveillance
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-19")  
+  (Description " Starting with Android 6.0, access to the microphone or camera is considered a dangerous permission and each recording attempt must be granted permission by the user at runtime. Similarly, the iOS security model only allows apps granted permission by the user to access the camera or microphone while running in the foreground. Therefore, an app operating in these or newer environments cannot abuse public APIs to initiate a recording outside the user’s knowledge. This threat can still be realized following successful exploits of OS vulnerabilities that ultimately provide a malicious app with unauthorized access to those resources (e.g. bypass access control on APIs or direct access to the hardware).")
+(CVEExamples " Not Applicable"))
+
+(defclass LoadingMaliciousCodeAtRuntime
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-20")  
+  (Description "Mobile apps may evade app vetting by downloading and executing malicious app code after installation. On Android, external code can be loaded using the OS-provided API. On iOS, the ability to modify app code is a consequence of the Objective C runtime environment that apps execute within, which permits method definitions to be modified at runtime. As the malicious code would not be present when the app was submitted for review, it may evade detection as a malicious application.")
+(CVEExamples " Not Applicable"))
+
+(defclass AppVettingMissesMaliciousApp
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-21")  
+  (Description "App vetting methods designed to detect malicious code are complicated by various code obfuscation techniques such as sandbox detection, encryption, and dead code (malicious functions unreachable by normal program execution). As a result, a malicious app subjected to app vetting may appear free of harmful code and safe to publish or distribute.")
+(CVEExamples "CVE-2015-07555") (CVEExamples "CVE-2016-5131"))
+
+(defclass AvoidingUninstallationViaPermissionsAbuse
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-22")  
+  (Description " The Device Administrator permission in Android is designed to allow enterprises to develop apps that can manage settings on users devices to enforce compliance with the enterprise mobile device security policy. Prior to Android 6.0, the Device Administrator role could enforce a policy that disabled uninstallation of an app. Malicious applications could abuse this behavior to gain persistence on the device. Since Android 6.0, users can always unregister a given app as a Device Administrator, which disables all associated policies and would restore the ability to uninstall the malicious app.")
+(CVEExamples "CVE-2017-0594")   (CVEExamples "CVE-2017-0595")  (CVEExamples "CVE-2017-0596"))
+
+(defclass RansomingAssetsViaDeviceManagementAbuse
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-23")  
+  (Description "Device management features built into Android and iOS allow organizations to develop apps designed to enforce organizational mobile device security policies. Some policy options could be abused by a malicious app to block access to desired functionality (e.g. camera access) until a ransom is paid. Prior to Android 7.0, the Device Administrator role could forcefully set a device unlock code, which could be used to hold the entire device for ransom.")
+(CVEExamples " Not Applicable"))
+
+(defclass CovertlyTrackDeviceLocation
+  :super MaliciousOrprivacy-invasiveApplication
+  :annotation
+  (annotation Id "APP-24")  
+  (Description "Apps that have been granted permission to Location Services or similar OS-provided services can abuse this permission to report device outside of what may be needed to support legitimate app functionality (e.g. navigation). Device location data may facilitate further attacks such as geo-physical or behavioral tracking of the user.")
+(CVEExamples " Not Applicable"))
+
+
+;; (defclass 
+  ;; :super MaliciousOrprivacy-invasiveApplication
+  ;; :annotation
+  ;; (annotation Id "APP-")  
+  ;; (Description "")
+;; (CVEExamples " Not Applicable"))
+
+
+
 
 
 
