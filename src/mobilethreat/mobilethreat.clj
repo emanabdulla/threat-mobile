@@ -77,6 +77,8 @@
    :comment "This subcategory identifies mobile malware based threats, based in part off of Google's mobile classification taxonomy."))
 
 
+
+
 ;(owl-and    (owl-some hasActor entriprise ) (owl-some  hasCountermeasure (owl-or countermeasure1 counter2 )  )               )
 
 
@@ -87,6 +89,26 @@
 (def Description  (annotator Description))
 (defaproperty CVEExamples)
 (def CVEExamples (annotator CVEExamples))
+
+;; (defclass Actor
+;  :comment " is a participant (person or group) in an action or  perform the possible countermeasures"
+;; )
+;; (as-disjoint-subclasses
+ ;; Actor
+ ;; (defclass MobileDeviceUser)
+ ;; (defclass MobileAppDeveloper)
+ ;; (defclass Enterprise))
+;; (defoproperty hasActor)
+
+(deftier Actor
+[
+MobileAppDeveloper
+MobileDeviceUser
+Enterprise
+]
+ :functional false
+:comment "is a participant (person or group) in an action or  perform the possible countermeasures"
+)
 
 ;;Application's Threat list
 (defclass EavesdroppingOnUnencrytedAppTraffic 
@@ -268,6 +290,7 @@
   (annotation Id "APP-24")  
   (Description "Apps that have been granted permission to Location Services or similar OS-provided services can abuse this permission to report device outside of what may be needed to support legitimate app functionality (e.g. navigation). Device location data may facilitate further attacks such as geo-physical or behavioral tracking of the user.")
 (CVEExamples " Not Applicable"))
+
 
 
 ;; (defclass 
