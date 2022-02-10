@@ -130,9 +130,7 @@
 (CVEExamples "CVE-2016-5340")
 (CVEExamples "CVE-2016-2059")
 (CVEExamples "CVE-2016-2503")
-(CVEExamples "CVE-2016-2504")
-
-)
+(CVEExamples "CVE-2016-2504"))
 
 (defclass MaliciousCodeDownloadedViaMaliciousURL
   :super VulnerableApplication
@@ -141,6 +139,52 @@
   (Description "A URL can refer to a broad spectrum of resource types, some of which can contain code that is executed by the process that requests it. The malicious code may automatically function in the target context, such as a script that is allowed to execute in a web browser, or it may require the presence of a vulnerability in the app that downloaded it that is exploited during an attempt to process the content, such as a buffer overflow attack.")
 (CVEExamples "CVE-2010-1797")
 (CVEExamples "CVE-2010-2973"))
+
+(defclass VulnerableThird-PartyLibrary
+  :super VulnerableApplication
+  :annotation
+  (annotation Id "APP-6")  
+  (Description "A mobile app may not directly contain vulnerabilities in its code, but may make calls to a third-party library that does contain vulnerabilities that are exploitable by a remote attacker.")
+(CVEExamples "Not Applicable"))
+
+(defclass DataOrFuncionalityExposedToUntrustedApps
+  :super VulnerableApplication
+  :annotation
+  (annotation Id "APP-7")  
+  (Description "Android apps can be designed to share data with other apps through a variety of mechanisms such as broadcast receivers, services, intents, and content providers. Some of these mechanisms permit the app developer to grant broader permissions to untrusted apps than intended. As a result, a malicious app may gain unauthorized access to sensitive functionality or data. The malicious app may further take advantage of the weak permission to exploit other vulnerabilities in the receiving app by sending it crafted input.")
+(CVEExamples " CVE-2016-2810"))
+
+(defclass WebViewAppVulnerableToBrowser-BasedAttacks
+  :super VulnerableApplication
+  :annotation
+  (annotation Id "APP-8")  
+  (Description "A mobile app that implement a WebView, which allows it to render and potentially perform actions available in a web page, may contain vulnerabilities to common browser-based attacks, such as cross-site request forgery, cross-site scripting, and injection of malicious dynamic content (e.g., JavaScript). Further, exploits delivered over web pages may allow remote exploitation of vulnerabilities in other app components, thereby gaining access to data or functionality outside the context of the vulnerable WebView.")
+(CVEExamples "CVE-2017-0587")(CVEExamples "CVE-2017-0588")(CVEExamples "CVE-2017-0589")(CVEExamples "CVE-2017-0590")
+(CVEExamples "CVE-2017-0591")(CVEExamples "CVE-2017-0592"))
+
+
+(defclass CompromisedBackendServer
+  :super VulnerableApplication
+  :annotation
+  (annotation Id "APP-9")  
+  (Description "If an app exchanges data with a compromised back-end server, it may be vulnerable to exploitation from what may be treated as a trusted system. This may provide an attacker with unauthorized access to sensitive user data or remote control over app behavior or content." )
+(CVEExamples "CVE-2015-1581"))
+
+(defclass PoorlyImplementedCryptography
+  :super VulnerableApplication
+  :annotation
+  (annotation Id "APP-10")  
+  (Description "While still supported by many systems, cryptographic algorithms and ciphers proven to be weak or broken should not be used to protect sensitive data. Weak algorithm/ciphers are those that have been deprecated following advancements in processing speeds and distributed processessing that have made brute-force attacks against them feasible. Broken algorithms, such as MD5, have known vulnerabilities an attacker can exploit to defeat one or more of its security properties. Similarly, the use of novel (e.g. home-grown) cryptographic algorithms should also be avoided. Novel algorithms may not have yet undergone sufficient scrutiny by the cryptologic community at large, and may possess flaws that if discovered, present an attacker with a path of lesser resistance to achieving unauthorized access to any data these cryptographic mechanisms were designed to protect." )
+(CVEExamples "CVE-2017-4896"))
+
+(defclass UntrustedInputToSensitiveOperations
+  :super VulnerableApplication
+  :annotation
+  (annotation Id "APP-11")  
+  (Description "Applications often have a need to dynamically incorporate input into sensitive operations such as access control decisions (e.g. authentication) or database operations. However, if a sensitive operation acts on untrusted and unsafe input, it may not function as intended. An attacker with control over such input can potentialy craft it to control application or system behavior. Prime examples of exploits include buffer overflow and code injection attacks. Therefore, it is important to evaluate untrusted input for safeness in the context in which it will be processed prior to accepting it.")
+(CVEExamples "CVE-2017-7005"))
+
+
 
 
 
